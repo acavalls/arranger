@@ -1,4 +1,4 @@
-version: "3.7"
+version: "3.2"
 
 services:
   elasticsearch:
@@ -9,9 +9,11 @@ services:
     environment:
       discovery.type: single-node
       cluster.name: workflow.elasticsearch
-      ES_JAVA_OPTS: -Xms512m -Xmx2048m
-      ELASTIC_PASSWORD: '$ES_PASSWORD'
-      xpack.security.enabled: 'true'
+      ES_JAVA_OPTS: -Xms2g -Xmx2g
+    volumes:
+      - "/data/es-config:/usr/share/elasticsearch/config"
+      - "/data/es-data:/usr/share/elasticsearch/data"
+      - "/data/es-logs:/usr/share/elasticsearch/logs"
     logging:
       driver: 'json-file'
       options:

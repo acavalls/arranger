@@ -90,6 +90,25 @@ USER $APP_USER
 CMD envsubst '$PORT,$REACT_APP_ARRANGER_ADMIN_ROOT' < /etc/nginx/nginx.conf.template > $NGINX_CONF_PATH && exec nginx -c $NGINX_CONF_PATH -g 'daemon off;'
 
 #######################################################
+# Web-portal: IPC Catalogue
+#######################################################
+#FROM builder as portal
+
+#ENV APP_UID=9999
+#ENV APP_GID=9999
+#ENV APP_HOME=/app
+#ENV APP_USER=node
+
+#WORKDIR $APP_HOME
+
+#USER $APP_USER
+
+#EXPOSE 5000
+
+#CMD ["npm", "run", "run-portal"]
+
+
+#######################################################
 # Test
 #######################################################
 FROM node:13.13.0 as test
