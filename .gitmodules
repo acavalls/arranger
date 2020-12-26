@@ -1,0 +1,3 @@
+[submodule "iPC_Data_Portal"]
+	path = iPC_Data_Portal
+	url = https://github.com/inab/iPC_Data_Portal.git
