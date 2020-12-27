@@ -74,7 +74,11 @@ services:
     build:
       context: ./iPC_Data_Portal
       dockerfile: Dockerfile
+      env_file:
+        - ./iPC_Data_Portal/.env
+
     ports:
       - "3000:3000"
     volumes:
-      - "./iPC_Data_Portal/:/app/"
+      - "./iPC_Data_Portal/src:/app/src"
+      - "./iPC_Data_Portal/public:/app/public"
